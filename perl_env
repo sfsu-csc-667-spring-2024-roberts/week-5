@@ -1,0 +1,15 @@
+#!/usr/bin/perl -wT
+use strict;
+use CGI qw(:standard);
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+
+print header;
+print start_html("Environment");
+
+print("<ul>");
+foreach my $key (sort(keys(%ENV))) {
+    print "    <li>$key | $ENV{$key}<li>\n";
+}
+print("</ul>");
+
+print end_html;
